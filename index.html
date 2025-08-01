@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lux Travel</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p0Lw+dJmLbXnobP6fU8tvka2gDgUkoXYUvlFwflbURg=" crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
   <style>
     body {
       margin: 0;
@@ -36,20 +36,6 @@
       width: 100%;
       height: 100%;
     }
-    .marker-wrapper {
-      position: relative;
-    }
-    .custom-red-marker {
-      background-color: red;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      border: 2px solid white;
-      box-shadow: 0 0 5px rgba(0,0,0,0.3);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
     #location-menu {
       width: 300px;
       border-left: 1px solid #ccc;
@@ -75,7 +61,7 @@
       display: block;
     }
   </style>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-pM0I+T0A3cO/M6M2fOIPiBL9e6Zh08A2x4nU2yMEv6k=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 </head>
 <body>
   <header>
@@ -104,20 +90,12 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    const redIcon = L.divIcon({
-      className: 'marker-wrapper',
-      html: '<div class="custom-red-marker"></div>',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
-    });
-
-    L.marker([38.3367, -0.4815], { icon: redIcon }).addTo(map)
+    // Simple default Leaflet marker to ensure map loads correctly
+    L.marker([38.3367, -0.4815]).addTo(map)
       .bindPopup('Alicante, Spain');
   </script>
 </body>
 </html>
-
-
 
 
 
