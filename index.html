@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lux Alicante</title>
+  <title>Lux Travel</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
@@ -24,21 +24,32 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.75rem;
     }
-    #map-container {
+    #main-container {
       display: flex;
       height: 90vh;
-    }
-    #world-map {
-      flex: 1;
-      background-color: white;
       position: relative;
     }
-    #world-map svg {
-      width: 100%;
-      height: 100%;
+    #map-section {
+      flex: 1;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
-    .highlight {
-      fill: red !important;
+    #map-section img {
+      max-width: 90%;
+      height: auto;
+    }
+    .dot {
+      position: absolute;
+      top: 38%; /* approximate location of Alicante */
+      left: 46%;
+      width: 12px;
+      height: 12px;
+      background-color: red;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255,0,0,0.6);
     }
     #location-menu {
       width: 300px;
@@ -71,14 +82,10 @@
     <h1>Lux Travel</h1>
   </header>
 
-  <div id="map-container">
-    <div id="world-map">
-      <!-- Simple SVG World Map with Highlight on Spain -->
-      <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1000" height="500" fill="#e0e0e0" />
-        <!-- Spain: approximate shape placeholder -->
-        <path class="highlight" d="M450,200 l20,0 l0,20 l-20,0 z" />
-      </svg>
+  <div id="main-container">
+    <div id="map-section">
+      <img src="3d05c63b-2002-4975-b47a-00ac9e9968f0.png" alt="World Map">
+      <div class="dot" title="Alicante, Spain"></div>
     </div>
     <div id="location-menu">
       <h3>Locations</h3>
