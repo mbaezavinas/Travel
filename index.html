@@ -55,6 +55,7 @@
       color: #333;
       font-weight: normal;
       margin-top: 0.5rem;
+      cursor: pointer;
     }
     .toggle {
       cursor: pointer;
@@ -80,6 +81,32 @@
       box-shadow: 0 0 5px rgba(0,0,0,0.4);
       transform: scale(var(--marker-zoom, 1));
     }
+    #alicante-screen {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .bubble {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      background-color: #eee;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .bubble:hover {
+      background-color: #ddd;
+    }
   </style>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 </head>
@@ -94,13 +121,20 @@
       <div>
         <span class="toggle" onclick="toggleSubmenu(this)">Spain</span>
         <div class="submenu">
-          <a href="#alicante">Alicante</a>
+          <a onclick="showAlicanteScreen()">Alicante</a>
         </div>
       </div>
     </div>
     <div id="map-section">
       <div id="map"></div>
     </div>
+  </div>
+
+  <div id="alicante-screen">
+    <div class="bubble">Restaurants</div>
+    <div class="bubble">Flights</div>
+    <div class="bubble">Experiences</div>
+    <div class="bubble">Hotels</div>
   </div>
 
   <script>
@@ -135,7 +169,10 @@
     function toggleSubmenu(element) {
       element.classList.toggle('active');
     }
+
+    function showAlicanteScreen() {
+      document.getElementById('alicante-screen').style.display = 'block';
+    }
   </script>
 </body>
 </html>
-
