@@ -36,11 +36,11 @@
       width: 100%;
       height: 100%;
     }
-    .leaflet-marker-icon {
-      background-color: red !important;
+    .custom-red-marker {
+      background-color: red;
       border-radius: 50%;
-      width: 10px !important;
-      height: 10px !important;
+      width: 10px;
+      height: 10px;
       border: 2px solid white;
       box-shadow: 0 0 5px rgba(0,0,0,0.3);
     }
@@ -99,8 +99,8 @@
     }).addTo(map);
 
     const redIcon = L.divIcon({
-      className: 'leaflet-marker-icon',
-      iconSize: [10, 10],
+      className: 'custom-red-marker',
+      iconSize: [10, 10]
     });
 
     L.marker([38.3367, -0.4815], { icon: redIcon }).addTo(map)
@@ -108,6 +108,7 @@
   </script>
 </body>
 </html>
+
 
 
 
