@@ -38,11 +38,12 @@
     }
     .custom-marker {
       background-color: red;
-      width: 10px;
-      height: 10px;
+      width: 0.7em;
+      height: 0.7em;
       border-radius: 50%;
       border: 2px solid white;
       box-shadow: 0 0 5px rgba(0,0,0,0.4);
+      transform: scale(var(--marker-zoom, 1));
     }
     #location-menu {
       width: 300px;
@@ -98,15 +99,27 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    const redDotIcon = L.divIcon({
-      className: '',
-      html: '<div class="custom-marker"></div>',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
-    });
+    function createResponsiveIcon(zoom) {
+      const scale = zoom <= 2 ? 0.6 : zoom <= 4 ? 0.8 : zoom <= 6 ? 1 : 1.2;
+      const div = document.createElement('div');
+      div.className = 'custom-marker';
+      div.style.setProperty('--marker-zoom', scale);
+      return L.divIcon({
+        className: '',
+        html: div.outerHTML,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+      });
+    }
 
-    L.marker([38.3367, -0.4815], { icon: redDotIcon }).addTo(map)
-      .bindPopup('Alicante, Spain');
+    let marker = L.marker([38.3367, -0.4815], {
+      icon: createResponsiveIcon(map.getZoom())
+    }).addTo(map).bindPopup('Alicante, Spain');
+
+    map.on('zoomend', () => {
+      const newIcon = createResponsiveIcon(map.getZoom());
+      marker.setIcon(newIcon);
+    });
   </script>
 </body>
 </html>
