@@ -36,20 +36,23 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      overflow: hidden;
     }
     #map-section img {
-      max-width: 100%;
+      width: 90%;
       height: auto;
+      display: block;
     }
     .dot {
       position: absolute;
-      top: 47%; /* adjust for Alicante */
-      left: 54%;
+      top: 38.5%; /* approximate location of Alicante */
+      left: 48.4%;
       width: 12px;
       height: 12px;
       background-color: red;
       border-radius: 50%;
       box-shadow: 0 0 6px rgba(255,0,0,0.6);
+      z-index: 10;
     }
     #location-menu {
       width: 300px;
@@ -84,7 +87,7 @@
 
   <div id="main-container">
     <div id="map-section">
-      <img src="41b236a7-69ed-4b45-9063-0739f3599127.png" alt="World Map">
+      <img src="0ab16cf9-8404-490a-8aea-465c7098b257.png" alt="World Map">
       <div class="dot" title="Alicante, Spain"></div>
     </div>
     <div id="location-menu">
