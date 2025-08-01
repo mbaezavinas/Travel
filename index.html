@@ -36,6 +36,9 @@
       width: 100%;
       height: 100%;
     }
+    .marker-wrapper {
+      position: relative;
+    }
     .custom-red-marker {
       background-color: red;
       border-radius: 50%;
@@ -43,6 +46,9 @@
       height: 10px;
       border: 2px solid white;
       box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      position: absolute;
+      top: 0;
+      left: 0;
     }
     #location-menu {
       width: 300px;
@@ -99,7 +105,7 @@
     }).addTo(map);
 
     const redIcon = L.divIcon({
-      className: '',
+      className: 'marker-wrapper',
       html: '<div class="custom-red-marker"></div>',
       iconSize: [14, 14],
       iconAnchor: [7, 7]
@@ -110,6 +116,7 @@
   </script>
 </body>
 </html>
+
 
 
 
