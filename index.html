@@ -99,8 +99,10 @@
     }).addTo(map);
 
     const redIcon = L.divIcon({
-      className: 'custom-red-marker',
-      iconSize: [10, 10]
+      className: '',
+      html: '<div class="custom-red-marker"></div>',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7]
     });
 
     L.marker([38.3367, -0.4815], { icon: redIcon }).addTo(map)
