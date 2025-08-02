@@ -93,7 +93,6 @@
       padding: 2rem;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       z-index: 1000;
-      text-align: center;
     }
     .bubble {
       display: inline-block;
@@ -108,16 +107,6 @@
     }
     .bubble:hover {
       background-color: #ddd;
-    }
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      font-weight: bold;
     }
   </style>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -143,8 +132,7 @@
   </div>
 
   <div id="alicante-screen">
-    <button class="close-button" onclick="hideAlicanteScreen()">×</button>
-    <div class="bubble">Restaurants</div>
+    <div class="bubble" onclick="window.location.href='restaurants.html'">Restaurants</div>
     <div class="bubble">Flights</div>
     <div class="bubble">Experiences</div>
     <div class="bubble">Hotels</div>
@@ -186,10 +174,7 @@
     function showAlicanteScreen() {
       document.getElementById('alicante-screen').style.display = 'block';
     }
-
-    function hideAlicanteScreen() {
-      document.getElementById('alicante-screen').style.display = 'none';
-    }
   </script>
 </body>
 </html>
+
