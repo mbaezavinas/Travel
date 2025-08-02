@@ -170,16 +170,8 @@
   });
 
   const restaurants = [
-    { name: "Open", coords: [38.3441, -0.4882] },
-    { name: "Nou Manolín", coords: [38.3445, -0.4825] },
-    { name: "Piripi", coords: [38.3467, -0.4911] },
-    { name: "Manero", coords: [38.3458, -0.4818] },
-    { name: "La Taberna del Gourmet", coords: [38.3448, -0.4796] },
-    { name: "Kiosko Peret", coords: [38.3373, -0.4804] },
-    { name: "La Boya", coords: [38.3369, -0.4765] },
-    { name: "Villa Bandida", coords: [38.3402, -0.4610] },
-    { name: "La Ponderosa", coords: [38.3815, -0.4030] }
-  ];
+  { name: "Open", coords: [38.3441, -0.4882] }
+];
 
   restaurants.forEach(resto => {
     L.marker(resto.coords, { icon: redIcon }).addTo(map).bindPopup(resto.name);
