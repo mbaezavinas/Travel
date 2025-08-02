@@ -104,12 +104,16 @@
       text-align: center;
       margin: 1rem;
       padding: 1rem 2.5rem;
-      min-width: 150px;
+      min-width: 180px;
       border-radius: 50px;
       background-color: #eee;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s;
+      gap: 0.5rem;
+    }
+    .bubble i {
+      font-size: 1.2rem;
     }
     .bubble:hover {
       background-color: #ddd;
@@ -150,10 +154,10 @@
 
   <div id="alicante-screen">
     <button class="close-button" onclick="hideAlicanteScreen()">×</button>
-    <div class="bubble" onclick="window.location.href='restaurants.html'">Restaurants</div>
-    <div class="bubble">Flights</div>
-    <div class="bubble">Experiences</div>
-    <div class="bubble">Hotels</div>
+    <div class="bubble" onclick="window.location.href='restaurants.html'"><i class="fas fa-utensils"></i> Restaurants</div>
+    <div class="bubble"><i class="fas fa-plane"></i> Flights</div>
+    <div class="bubble"><i class="fas fa-star"></i> Experiences</div>
+    <div class="bubble"><i class="fas fa-hotel"></i> Hotels</div>
   </div>
 
   <script>
